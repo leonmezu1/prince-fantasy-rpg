@@ -373,11 +373,11 @@ export default class GameScene extends Phaser.Scene {
           }
         } else {
           this.damageCalc = false;
-          if (this.slime) { this.slime.anims?.play('iddleEn', true); }
+          if (this.slime) { this.slime.anims.play('iddleEn', true); }
         }
       } else {
         this.player.anims.play('iddle', true);
-        if (this.slime) { this.slime.anims?.play('iddleEn', true); }
+        if (this.slime) { this.slime.anims.play('iddleEn', true); }
 
         this.coin1.anims.play('iddleCoin1', true);
         this.coin2.anims.play('iddleCoin2', true);

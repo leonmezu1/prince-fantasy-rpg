@@ -48,11 +48,9 @@ export default class TitleScene extends Phaser.Scene {
     this.optionsButton.setScale(0.4, 0.4);
     this.ScoreButton.setScale(0.4, 0.4);
 
-
     this.ScoreButton.on('pointerdown', () => {
       this.scene.start('Scores');
     });
-
 
     this.optionsButton.on('pointerdown', () => {
       this.scene.start('Options');

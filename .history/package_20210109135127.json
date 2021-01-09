@@ -21,8 +21,7 @@
   "main": "index.js",
   "scripts": {
     "test": "jest",
-    "build": "webpack",
-    "start": "webpack-dev-server --w --mode development --open --config ./webpack.config.js "
+    "build": "webpack"
   },
   "repository": {
     "type": "git",
@@ -63,10 +62,10 @@
     "stylelint-scss": "^3.17.2",
     "webpack": "^4.43.0",
     "webpack-cli": "^3.3.11",
-    "webpack-dev-server": "^3.11.1"
+    "webpack-dev-server": "^3.11.0"
   },
   "dependencies": {
-    "@babel/polyfill": "^7.8.7",
-    "phaser": "^3.50.1"
+    "phaser": "^3.50.1",
+    "@babel/polyfill": "^7.8.7"
   }
 }

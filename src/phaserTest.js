@@ -7,7 +7,6 @@ import TitleScene from './scenes/TitleScene';
 import ScoreScene from './scenes/ScoreScene';
 import OptionsScene from './scenes/OptionsScene';
 
-
 export const gameTestingSuite = () => {
   const config = {
     type: Phaser.AUTO,

@@ -159,6 +159,7 @@ export default class GameScene extends Phaser.Scene {
       repeat: -1,
     });
 
+
     this.anims.create({
       key: 'iddleCoin1',
       frames: this.anims.generateFrameNumbers('coin1', { frames: [0, 1, 2, 3, 4] }),
@@ -308,12 +309,13 @@ export default class GameScene extends Phaser.Scene {
         }
       }
 
-      if (this.cursors.up.isDown && this.player.body.touching.down) {
+      if(this.cursors.up.isDown && this.player.body.touching.down)
+      {
         console.log(this.player.body.onFloor());
-        // this.player.body.offset.x = 50;
-        // this.player.setScale(-1, 1);
+        //this.player.body.offset.x = 50;
+        //this.player.setScale(-1, 1);
         this.player.body.setVelocityX(-80);
-        // this.player.anims.play('jump', true);
+        //this.player.anims.play('jump', true);
       }
 
       if (this.cursors.left.isDown) {
@@ -347,12 +349,14 @@ export default class GameScene extends Phaser.Scene {
           this.playingSound = false;
           this.player.setVelocityX(0);
         }
+ 
 
         if (this.player.anims.currentFrame.index === 3
           || this.player.anims.currentFrame.index === 9
           || this.player.anims.currentFrame.index === 14) {
+
           if (this.hitting === true) {
-            if (this.slime) this.slime.anims?.play('hittingEn');
+            this.slime.anims.play('hittingEn');
 
             if (this.damageCalc === false) {
               this.damageCalc = true;
@@ -361,23 +365,27 @@ export default class GameScene extends Phaser.Scene {
               if (this.score > maxScore) {
                 this.slime.destroy();
               }
-
-              if (this.slime && this.model.soundOn === true) {
+            
+              if(this.slime && this.model.soundOn === true) {
                 this.sound.play('hitSlime', { volume: 0.2, pitch: 3 });
                 console.log(this.sound.play('hitSlime', { volume: 0.2, pitch: 3 }));
-              }
+              } 
 
               this.score += 10;
-              if (this.slime) { this.createFloatingText(this.slime.x - 5, this.slime.y - 5, '10', 0xffff00); }
+              if(this.slime)
+                this.createFloatingText(this.slime.x - 5, this.slime.y - 5, '10', 0xffff00);
             }
-          }
+          } 
+
         } else {
           this.damageCalc = false;
-          if (this.slime) { this.slime.anims?.play('iddleEn', true); }
+          if(this.slime) 
+            this.slime.anims.play('iddleEn', true);
         }
       } else {
         this.player.anims.play('iddle', true);
-        if (this.slime) { this.slime.anims?.play('iddleEn', true); }
+        if(this.slime)
+          this.slime.anims.play('iddleEn', true);
 
         this.coin1.anims.play('iddleCoin1', true);
         this.coin2.anims.play('iddleCoin2', true);
@@ -385,7 +393,8 @@ export default class GameScene extends Phaser.Scene {
       }
     } else {
       this.player.anims.play('iddle', true);
-      if (this.slime) { this.slime.anims.play('iddleEn', true); }
+      if (this.slime)
+        this.slime.anims.play('iddleEn', true);
 
       this.coin1.anims.play('iddleCoin1', true);
       this.coin2.anims.play('iddleCoin2', true);
